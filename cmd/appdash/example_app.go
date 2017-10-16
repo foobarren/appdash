@@ -9,9 +9,9 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/foobrren/appdash"
-	"github.com/foobrren/appdash/httptrace"
-	"github.com/foobrren/appdash/traceapp"
+	"github.com/foobarren/appdash"
+	"github.com/foobarren/appdash/httptrace"
+	"github.com/foobarren/appdash/traceapp"
 )
 
 func init() {

@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/foobrren/appdash"
+	"github.com/foobarren/appdash"
 )
 
 func init() {

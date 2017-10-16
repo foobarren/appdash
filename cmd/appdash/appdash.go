@@ -2,7 +2,7 @@
 //
 // For information about Appdash see:
 //
-// https://github.com/foobrren/appdash
+// https://github.com/foobarren/appdash
 //
 // Demo mode
 //
