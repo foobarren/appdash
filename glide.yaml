@@ -1,0 +1,23 @@
+package: github.com/foobarren/appdash
+import:
+- package: github.com/gogo/protobuf
+  version: ~0.5.0
+  subpackages:
+  - io
+  - proto
+- package: github.com/gorilla/context
+  version: ~1.1.0
+- package: github.com/gorilla/mux
+  version: ~1.5.0
+- package: github.com/jessevdk/go-flags
+  version: ~1.3.0
+- package: github.com/opentracing/basictracer-go
+  version: ~1.0.0
+- package: github.com/opentracing/opentracing-go
+  version: ~1.0.2
+  subpackages:
+  - log
+- package: github.com/sourcegraph/appdash-data
+- package: github.com/urfave/negroni
+  version: ~0.2.0
+- package: golang.org/x/net
