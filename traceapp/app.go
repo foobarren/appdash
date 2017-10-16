@@ -31,7 +31,7 @@ import (
 	"github.com/gorilla/mux"
 
 	"github.com/foobarren/appdash"
-	static "github.com/foobarren/appdash-data"
+	static "github.com/sourcegraph/appdash-data"
 )
 
 // App is an HTTP application handler that also exposes methods for
