@@ -8,8 +8,8 @@ import (
 
 	basictracer "github.com/opentracing/basictracer-go"
 
-	"sourcegraph.com/sourcegraph/appdash"
-	"sourcegraph.com/sourcegraph/appdash/internal/wire"
+	"github.com/foobarren/appdash"
+	"github.com/foobarren/appdash/internal/wire"
 )
 
 func TestOpentracingRecorder(t *testing.T) {

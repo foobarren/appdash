@@ -12,9 +12,9 @@ import (
 	"net/url"
 	"time"
 
-	"sourcegraph.com/sourcegraph/appdash"
-	"sourcegraph.com/sourcegraph/appdash/httptrace"
-	"sourcegraph.com/sourcegraph/appdash/traceapp"
+	"github.com/foobarren/appdash"
+	"github.com/foobarren/appdash/httptrace"
+	"github.com/foobarren/appdash/traceapp"
 
 	"github.com/urfave/negroni"
 	"github.com/gorilla/context"

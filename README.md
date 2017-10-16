@@ -1,6 +1,6 @@
-# appdash (view on [Sourcegraph](https://sourcegraph.com/github.com/sourcegraph/appdash))
+# appdash (view on [Sourcegraph](https://github.com/github.com/foobarren/appdash))
 
-<img width=250 src="https://s3-us-west-2.amazonaws.com/sourcegraph-assets/apptrace-screenshot0.png" align="right">
+<img width=250 src="https://s3-us-west-2.amazonaws.com/foobarren-assets/apptrace-screenshot0.png" align="right">
 
 Appdash is an application tracing system for Go, based on
 [Google's Dapper](http://research.google.com/pubs/pub36356.html) and
@@ -22,7 +22,7 @@ are provided, and you can write your own.
 To install appdash, run:
 
 ```
-go get -u sourcegraph.com/sourcegraph/appdash/cmd/...
+go get -u github.com/foobarren/appdash/cmd/...
 ```
 
 A standalone example using Negroni and Gorilla packages is available in the `examples/cmd/webapp` folder.
@@ -38,7 +38,7 @@ Questions or comments? Join us [on Slack](http://slackin.srclib.org/)!
 Appdash uses [vfsgen](https://github.com/shurcooL/vfsgen) to package HTML templates with the appdash binary for
 distribution. This means that if you want to modify the template data in `traceapp/tmpl` you can first build using the `dev` build tag, which makes the template data be reloaded from disk live.
 
-After you're finished making changes to the templates, always run `go generate sourcegraph.com/sourcegraph/appdash/traceapp/tmpl` so that the `data_vfsdata.go` file is updated for normal Appdash users that aren't interested in modifying the template data.
+After you're finished making changes to the templates, always run `go generate github.com/foobarren/appdash/traceapp/tmpl` so that the `data_vfsdata.go` file is updated for normal Appdash users that aren't interested in modifying the template data.
 
 ## Components
 
@@ -49,7 +49,7 @@ architectural choices were made.
 
 There are 4 main components/concepts in appdash:
 
-* [**Spans**](https://sourcegraph.com/sourcegraph.com/sourcegraph/appdash@master/.GoPackage/sourcegraph.com/sourcegraph/appdash/.def/SpanID):
+* [**Spans**](https://github.com/github.com/foobarren/appdash@master/.GoPackage/github.com/foobarren/appdash/.def/SpanID):
   A span refers to an operation and all of its children. For example,
   an HTTP handler handles a request by calling other components in
   your system, which in turn make various API and DB calls. The HTTP
@@ -58,28 +58,28 @@ There are 4 main components/concepts in appdash:
   has its own descendents. In this way, appdash constructs a tree of
   all of the operations that occur during the handling of the HTTP
   request.
-* [**Event**](https://sourcegraph.com/sourcegraph.com/sourcegraph/appdash@master/.GoPackage/sourcegraph.com/sourcegraph/appdash/.def/Event):
+* [**Event**](https://github.com/github.com/foobarren/appdash@master/.GoPackage/github.com/foobarren/appdash/.def/Event):
   Your application records the various operations it performs (in the
   course of handling a request) as Events. Events can be arbitrary
   messages or metadata, or they can be structured event types defined
   by a Go type (such as an HTTP
-  [ServerEvent](https://sourcegraph.com/sourcegraph.com/sourcegraph/appdash@master/.GoPackage/sourcegraph.com/sourcegraph/appdash/httptrace/.def/ServerEvent)
+  [ServerEvent](https://github.com/github.com/foobarren/appdash@master/.GoPackage/github.com/foobarren/appdash/httptrace/.def/ServerEvent)
   or an
-  [SQLEvent](https://sourcegraph.com/sourcegraph.com/sourcegraph/appdash@master/.GoPackage/sourcegraph.com/sourcegraph/appdash/sqltrace/.def/SQLEvent)).
-* [**Recorder**](https://sourcegraph.com/sourcegraph.com/sourcegraph/appdash@master/.GoPackage/sourcegraph.com/sourcegraph/appdash/.def/Recorder):
+  [SQLEvent](https://github.com/github.com/foobarren/appdash@master/.GoPackage/github.com/foobarren/appdash/sqltrace/.def/SQLEvent)).
+* [**Recorder**](https://github.com/github.com/foobarren/appdash@master/.GoPackage/github.com/foobarren/appdash/.def/Recorder):
   Your application uses a Recorder to send events to a Collector (see
   below). Each Recorder is associated with a particular span in the
   tree of operations that are handling a particular request, and all
   events sent via a Recorder are automatically associated with that
   context.
-* [**Collector**](https://sourcegraph.com/sourcegraph.com/sourcegraph/appdash@master/.GoPackage/sourcegraph.com/sourcegraph/appdash/.def/Collector):
+* [**Collector**](https://github.com/github.com/foobarren/appdash@master/.GoPackage/github.com/foobarren/appdash/.def/Collector):
   A Collector receives Annotations (which are the encoded form of
   Events) sent by a Recorder. Typically, your application's Recorder
   talks to a local Collector (created with
-  [NewRemoteCollector](https://sourcegraph.com/sourcegraph.com/sourcegraph/appdash@master/.GoPackage/sourcegraph.com/sourcegraph/appdash/.def/NewRemoteCollector). This
+  [NewRemoteCollector](https://github.com/github.com/foobarren/appdash@master/.GoPackage/github.com/foobarren/appdash/.def/NewRemoteCollector). This
   local Collector forwards data to a remote appdash server (created
   with
-  [NewServer](https://sourcegraph.com/sourcegraph.com/sourcegraph/appdash@master/.GoPackage/sourcegraph.com/sourcegraph/appdash/.def/NewServer)
+  [NewServer](https://github.com/github.com/foobarren/appdash@master/.GoPackage/github.com/foobarren/appdash/.def/NewServer)
   that combines traces from all of the services that compose your
   application. The appdash server in turn runs a Collector that
   listens on the network for this data, and it then stores what it
@@ -93,7 +93,7 @@ Appdash has clients available for Go, Python (see `python/` subdir) and Ruby (se
 ## OpenTracing Support
 
 Appdash supports the [OpenTracing](http://opentracing.io) API. Please see the
-`opentracing` subdir for the Go implementation, or see [the GoDoc](https://godoc.org/sourcegraph.com/sourcegraph/appdash/opentracing)
+`opentracing` subdir for the Go implementation, or see [the GoDoc](https://godoc.org/github.com/foobarren/appdash/opentracing)
 for API documentation.
 
 ## Acknowledgments

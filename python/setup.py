@@ -7,8 +7,8 @@ setup(
     version = '1.0',
     description = 'Appdash Python Integration',
     author = 'Sourcegraph',
-    author_email = 'hi@sourcegraph.com',
-    url = 'https://sourcegraph.com/sourcegraph/appdash',
+    author_email = 'hi@github.com',
+    url = 'https://github.com/foobarren/appdash',
     packages = ['appdash'],
     install_requires = ['basictracer'],
 )

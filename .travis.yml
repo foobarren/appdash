@@ -10,6 +10,6 @@ matrix:
     - go: tip
 
 before_install:
-  - mkdir -p $HOME/gopath/src/sourcegraph.com/sourcegraph
-  - mv $TRAVIS_BUILD_DIR $HOME/gopath/src/sourcegraph.com/sourcegraph/appdash
-  - export TRAVIS_BUILD_DIR=$HOME/gopath/src/sourcegraph.com/sourcegraph/appdash
+  - mkdir -p $HOME/gopath/src/github.com/foobarren
+  - mv $TRAVIS_BUILD_DIR $HOME/gopath/src/github.com/foobarren/appdash
+  - export TRAVIS_BUILD_DIR=$HOME/gopath/src/github.com/foobarren/appdash

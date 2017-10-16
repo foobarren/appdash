@@ -14,9 +14,9 @@ import (
 	"strings"
 	"time"
 
-	"sourcegraph.com/sourcegraph/appdash"
-	appdashtracer "sourcegraph.com/sourcegraph/appdash/opentracing"
-	"sourcegraph.com/sourcegraph/appdash/traceapp"
+	"github.com/foobarren/appdash"
+	appdashtracer "github.com/foobarren/appdash/opentracing"
+	"github.com/foobarren/appdash/traceapp"
 
 	"github.com/urfave/negroni"
 	"github.com/gorilla/mux"
